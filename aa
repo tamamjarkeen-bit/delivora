@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivora</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f6f7fb;
+    color: #111;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: #0d1f44;
+    color: white;
+}
+
+.btn-secondary {
+    border: 1px solid #ddd;
+    color: #111;
+}
+
+/* FEATURE CARD */
+.card {
+    background: linear-gradient(135deg, #0d1f44, #1c3a7a);
+    color: white;
+    padding: 70px;
+    border-radius: 20px;
+    font-size: 22px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* SERVICES */
+.services {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+/* CONTACT */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-box {
+    display: flex;
+    gap: 50px;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* FOOTER */
+.footer {
+    background: #0d1f44;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>Ihr Partner für moderne Delivery- und Flottenlösungen</h1>
+        <p>Effiziente Fahrerstrukturen, professionelle Abläufe und skalierbare Lieferlösungen für Unternehmen.</p>
+        <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+        <a href="#leistungen" class="btn btn-secondary">Unsere Leistungen</a>
+    </div>
+
+    <div class="card">
+        Fleet Management
+    </div>
+</div>
+
+<!-- SERVICES -->
+<div id="leistungen" class="services">
+    <h2>Unsere Leistungen</h2>
+
+    <div class="grid">
+        <div class="service">Fleet Management</div>
+        <div class="service">Delivery Services</div>
+        <div class="service">Fahrerorganisation</div>
+        <div class="service">Operative Koordination</div>
+        <div class="service">Skalierbare Strukturen</div>
+        <div class="service">Zuverlässige Partner</div>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="kontakt" class="contact">
+    <h2>Kontakt aufnehmen</h2>
+
+    <div class="contact-box">
+        <div>
+            <p><strong>Delivora UG</strong></p>
+            <p>Asbeckstraße 14<br>21073 Hamburg</p>
+            <p>Email: info@deli-vora.com</p>
+            <p>Tel: +49 176 84338901</p>
+        </div>
+
+        <div class="form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="E-Mail">
+            <textarea placeholder="Nachricht"></textarea>
+            <button class="btn btn-primary">Senden</button>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    © Delivora – Alle Rechte vorbehalten
+</div>
+
+</body>
+</html>
