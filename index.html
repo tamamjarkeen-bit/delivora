@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delivora | Delivery & Fleet Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#06142f;
+  --navy2:#0d2b61;
+  --blue:#2457ff;
+  --sky:#eaf1ff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --bg:#f7f9fd;
+  --card:#ffffff;
+  --line:#e5eaf3;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(36,87,255,.14), transparent 27%),
+    radial-gradient(circle at 90% 14%, rgba(6,20,47,.13), transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(36,87,255,.08), transparent 30%),
+    linear-gradient(180deg,#ffffff 0%,#f6f8fc 100%);
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(6,20,47,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6,20,47,.035) 1px, transparent 1px);
+  background-size:54px 54px;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.container{
+  width:92%;
+  max-width:1180px;
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.74);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(229,234,243,.85);
+}
+
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:-.7px;
+  color:var(--navy);
+}
+
+.logo-mark{
+  width:42px;
+  height:42px;
+  border-radius:15px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  box-shadow:0 16px 34px rgba(6,20,47,.24);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:7px;
+  border:1px solid rgba(229,234,243,.9);
+  background:rgba(255,255,255,.68);
+  border-radius:999px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#1e293b;
+  font-size:14px;
+  font-weight:800;
+  padding:11px 17px;
+  border-radius:999px;
+  transition:.25s ease;
+}
+
+nav a:hover{
+  background:var(--navy);
+  color:white;
+}
+
+/* HERO */
+.hero{
+  min-height:720px;
+  padding:86px 0 74px;
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  align-items:center;
+  gap:70px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.82);
+  color:var(--navy);
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:24px;
+  box-shadow:0 12px 26px rgba(16,24,40,.04);
+}
+
+.badge span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 6px rgba(36,87,255,.13);
+}
+
+.hero h1{
+  font-size:62px;
+  line-height:1.02;
+  letter-spacing:-2.5px;
+  margin:0 0 24px;
+  color:var(--navy);
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.75;
+  color:var(--muted);
+  max-width:580px;
+  margin:0 0 34px;
+}
+
+.actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  text-decoration:none;
+  padding:15px 24px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:900;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:.25s ease;
+}
+
+.btn-primary{
+  background:var(--navy);
+  color:white;
+  box-shadow:0 18px 38px rgba(6,20,47,.25);
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 24px 55px rgba(6,20,47,.32);
+}
+
+.btn-secondary{
+  background:rgba(255,255,255,.82);
+  color:var(--navy);
+  border:1px solid var(--line);
+}
+
+.btn-secondary:hover{
+  transform:translateY(-3px);
+  border-color:#cbd5e1;
+}
+
+/* HERO DASHBOARD */
+.hero-visual{
+  position:relative;
+  animation:floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+.main-card{
+  min-height:410px;
+  border-radius:34px;
+  padding:36px;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.20), transparent 24%),
+    linear-gradient(135deg,#06142f,#0e2f73 65%,#2457ff);
+  color:white;
+  box-shadow:0 34px 90px rgba(6,20,47,.31);
+  position:relative;
+  overflow:hidden;
+}
+
+.main-card:after{
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  right:-90px;
+  top:-90px;
+  background:rgba(255,255,255,.09);
+  border-radius:50%;
+}
+
+.card-top{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:26px;
+}
+
+.card-top h3{
+  margin:0;
+  font-size:29px;
+  letter-spacing:-.8px;
+}
+
+.status{
+  font-size:12px;
+  font-weight:900;
+  padding:8px 11px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.20);
+}
+
+.main-card p{
+  position:relative;
+  z-index:1;
+  color:#dce6ff;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+.ops-list{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:14px;
+}
+
+.ops-item{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:19px;
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.ops-item strong{
+  font-size:14px;
+}
+
+.ops-item span{
+  font-size:12px;
+  color:#dce6ff;
+}
+
+.progress{
+  width:90px;
+  height:7px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  overflow:hidden;
+}
+
+.progress i{
+  display:block;
+  height:100%;
+  width:75%;
+  border-radius:999px;
+  background:white;
+}
+
+/* SECTIONS */
+section{
+  padding:88px 0;
+}
+
+.section-head{
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 52px;
+}
+
+.section-head h2{
+  font-size:42px;
+  letter-spacing:-1.4px;
+  margin:0 0 14px;
+  color:var(--navy);
+}
+
+.section-head p{
+  color:var(--muted);
+  line-height:1.75;
+}
+
+/* SERVICES */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.service{
+  position:relative;
+  background:rgba(255,255,255,.88);
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:30px;
+  box-shadow:0 20px 48px rgba(16,24,40,.05);
+  transition:.28s ease;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.service:before{
+  content:"";
+  position:absolute;
+  inset:auto -60px -80px auto;
+  width:150px;
+  height:150px;
+  background:rgba(36,87,255,.08);
+  border-radius:50%;
+  transition:.28s ease;
+}
+
+.service:hover{
+  transform:translateY(-8px);
+  box-shadow:0 32px 72px rgba(16,24,40,.10);
+  border-color:#d6ddec;
+}
+
+.service:hover .icon{
+  transform:scale(1.08) rotate(-4deg);
+}
+
+.service.active{
+  background:linear-gradient(180deg,#ffffff,#f4f7ff);
+  border-color:#bfd0ff;
+}
+
+.icon{
+  width:50px;
+  height:50px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  font-size:21px;
+  transition:.28s ease;
+  box-shadow:0 16px 30px rgba(6,20,47,.18);
+}
+
+.service h3{
+  margin:0 0 11px;
+  font-size:18px;
+  color:var(--navy);
+  position:relative;
+}
+
+.service p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.65;
+  font-size:14px;
+  position:relative;
+}
+
+.more{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:.32s ease;
+  margin-top:0;
+  color:#475569;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.service.active .more{
+  max-height:160px;
+  opacity:1;
+  margin-top:16px;
+}
+
+/* ABOUT */
+.about-wrap{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:32px;
+  align-items:center;
+}
+
+.about-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:32px;
+  padding:42px;
+  box-shadow:0 24px 64px rgba(16,24,40,.06);
+}
+
+.about-card h2{
+  font-size:39px;
+  line-height:1.12;
+  letter-spacing:-1.2px;
+  color:var(--navy);
+  margin:0 0 18px;
+}
+
+.about-card p{
+  color:var(--muted);
+  line-height:1.85;
+  margin:0;
+}
+
+.about-points{
+  display:grid;
+  gap:18px;
+}
+
+.about-point{
+  background:rgba(255,255,255,.86);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  box-shadow:0 18px 44px rgba(16,24,40,.045);
+}
+
+.check{
+  width:34px;
+  height:34px;
+  min-width:34px;
+  border-radius:12px;
+  background:var(--navy);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
+
+.about-point strong{
+  display:block;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+.about-point span{
+  color:var(--muted);
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* WHY */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.why{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:28px;
+  text-align:left;
+  box-shadow:0 18px 46px rgba(16,24,40,.05);
+  transition:.25s ease;
+}
+
+.why:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 62px rgba(16,24,40,.09);
+}
+
+.why-symbol{
+  width:46px;
+  height:46px;
+  border-radius:16px;
+  background:#eef4ff;
+  color:var(--blue);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  margin-bottom:18px;
+}
+
+.why strong{
+  display:block;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.why span{
+  color:var(--muted);
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* CONTACT */
+.contact-wrap{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:30px;
+}
+
+.contact-info,.form{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:38px;
+  box-shadow:0 24px 64px rgba(16,24,40,.06);
+}
+
+.contact-info h3,.form h3{
+  margin-top:0;
+  color:var(--navy);
+}
+
+.contact-line{
+  margin:18px 0;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+input,textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+  font-family:inherit;
+  font-size:14px;
+  background:#fbfcff;
+  outline:none;
+}
+
+input:focus,textarea:focus{
+  border-color:#b7c8ff;
+  box-shadow:0 0 0 4px rgba(36,87,255,.08);
+}
+
+textarea{
+  height:140px;
+  resize:none;
+}
+
+button{
+  width:100%;
+  border:0;
+  cursor:pointer;
+  background:var(--navy);
+  color:white;
+  padding:16px;
+  border-radius:999px;
+  font-weight:900;
+  font-family:inherit;
+  transition:.25s ease;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 38px rgba(6,20,47,.22);
+}
+
+/* FOOTER */
+footer{
+  background:var(--navy);
+  color:white;
+  padding:60px 0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:34px;
+}
+
+footer h4{
+  margin:0 0 18px;
+}
+
+footer p,footer a{
+  color:#c9d3e7;
+  text-decoration:none;
+  display:block;
+  margin:9px 0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.copy{
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:38px;
+  padding-top:24px;
+  color:#c9d3e7;
+  font-size:13px;
+}
+
+/* REVEAL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+  transition:.75s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero,.about-wrap,.contact-wrap,.footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:64px;
+    gap:44px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    letter-spacing:-1.5px;
+  }
+
+  .services-grid,.why-grid{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    gap:4px;
+    padding:5px;
+  }
+
+  nav a{
+    font-size:12px;
+    padding:9px 10px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .section-head h2{
+    font-size:34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-mark">D</div>
+      Delivora
+    </div>
+
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="container hero">
+  <div>
+    <div class="badge"><span></span> Delivery · Fleet · Fahrerorganisation</div>
+    <h1>Premium Delivery- und Flottenlösungen für moderne Unternehmen</h1>
+    <p>
+      Delivora unterstützt Unternehmen mit zuverlässigen Fahrern,
+      klaren operativen Strukturen und professionell organisierten Lieferprozessen.
+    </p>
+    <div class="actions">
+      <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen →</a>
+      <a href="#leistungen" class="btn btn-secondary">Unsere Leistungen</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="main-card">
+      <div class="card-top">
+        <h3>Fleet Operations</h3>
+        <div class="status">Live Structure</div>
+      </div>
+
+      <p>
+        Eine klare operative Struktur für Fahrerkoordination,
+        Lieferprozesse und skalierbare Delivery-Abläufe.
+      </p>
+
+      <div class="ops-list">
+        <div class="ops-item">
+          <div><strong>Driver Coordination</strong><br><span>Fahrerplanung & Organisation</span></div>
+          <div class="progress"><i style="width:82%"></i></div>
+        </div>
+        <div class="ops-item">
+          <div><strong>Delivery Operations</strong><br><span>Effiziente Abläufe im Alltag</span></div>
+          <div class="progress"><i style="width:74%"></i></div>
+        </div>
+        <div class="ops-item">
+          <div><strong>Fleet Structure</strong><br><span>Skalierbare Einsatzmodelle</span></div>
+          <div class="progress"><i style="width:88%"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="leistungen" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>Unsere Leistungen</h2>
+      <p>
+        Professionelle Unterstützung für Unternehmen im Bereich Delivery,
+        Fahrerorganisation und Flottenmanagement.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service">
+        <div class="icon">↗</div>
+        <h3>Fleet Management</h3>
+        <p>Strukturierte Verwaltung von Fahrern, Einsätzen und operativen Abläufen.</p>
+        <div class="more">Wir helfen dabei, Fahrerstrukturen klar zu organisieren und operative Prozesse sauber zu koordinieren.</div>
+      </div>
+
+      <div class="service">
+        <div class="icon">⚡</div>
+        <h3>Delivery Services</h3>
+        <p>Organisation effizienter Lieferprozesse für Plattformen, Restaurants und Partner.</p>
+        <div class="more">Ziel ist ein stabiler Lieferbetrieb mit klaren Abläufen und zuverlässiger Umsetzung.</div>
+      </div>
+
+      <div class="service">
+        <div class="icon">👥</div>
+        <h3>Fahrerorganisation</h3>
+        <p>Aufbau und Betreuung zuverlässiger Fahrerstrukturen für den täglichen Betrieb.</p>
+        <div class="more">Wir unterstützen bei Koordination, Kommunikation und Einsatzstruktur der Fahrer.</div>
+      </div>
+
+      <div class="service">
+        <div class="icon">◎</div>
+        <h3>Operative Koordination</h3>
+        <p>Klare Kommunikation, strukturierte Abläufe und professionelle Umsetzung.</p>
+        <div class="more">Wir schaffen transparente Prozesse zwischen Partnern, Fahrern und operativen Anforderungen.</div>
+      </div>
+
+      <div class="service">
+        <div class="icon">▦</div>
+        <h3>Skalierbare Strukturen</h3>
+        <p>Flexible Prozesse, die mit wachsenden Lieferanforderungen mithalten können.</p>
+        <div class="more">Geeignet für Unternehmen, die ihre Delivery-Strukturen schrittweise erweitern möchten.</div>
+      </div>
+
+      <div class="service">
+        <div class="icon">✓</div>
+        <h3>Partnerlösungen</h3>
+        <p>Langfristige Zusammenarbeit mit Fokus auf Stabilität, Qualität und Organisation.</p>
+        <div class="more">Unser Fokus liegt auf verlässlicher Zusammenarbeit und professioneller Umsetzung im Alltag.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns" class="reveal">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-card">
+        <h2>Über uns</h2>
+        <p>
+          Delivora ist ein modernes Dienstleistungsunternehmen für Delivery-
+          und Flottenlösungen. Wir unterstützen Unternehmen bei der Organisation
+          von Fahrern, der Koordination operativer Abläufe und dem Aufbau
+          effizienter Lieferstrukturen.
+        </p>
+      </div>
+
+      <div class="about-points">
+        <div class="about-point">
+          <div class="check">✓</div>
+          <div>
+            <strong>Klare operative Strukturen</strong>
+            <span>Wir setzen auf verständliche Abläufe, direkte Kommunikation und professionelle Koordination.</span>
+          </div>
+        </div>
+
+        <div class="about-point">
+          <div class="check">✓</div>
+          <div>
+            <strong>Fokus auf Zuverlässigkeit</strong>
+            <span>Unser Ziel ist ein stabiler, planbarer und sauber organisierter Lieferbetrieb.</span>
+          </div>
+        </div>
+
+        <div class="about-point">
+          <div class="check">✓</div>
+          <div>
+            <strong>Moderne Partnerlösungen</strong>
+            <span>Flexible Unterstützung für Plattformen, Restaurants und Logistikpartner.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>Warum Delivora?</h2>
+      <p>
+        Wir verbinden praktische Umsetzung mit klarer Organisation und einem professionellen Anspruch.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why">
+        <div class="why-symbol">◆</div>
+        <strong>Zuverlässige Prozesse</strong>
+        <span>Strukturierte Abläufe für einen stabilen täglichen Betrieb.</span>
+      </div>
+
+      <div class="why">
+        <div class="why-symbol">✦</div>
+        <strong>Flexible Modelle</strong>
+        <span>Anpassbare Unterstützung je nach Bedarf und Einsatzbereich.</span>
+      </div>
+
+      <div class="why">
+        <div class="why-symbol">◈</div>
+        <strong>Klare Koordination</strong>
+        <span>Saubere Kommunikation zwischen Partnern, Fahrern und Prozessen.</span>
+      </div>
+
+      <div class="why">
+        <div class="why-symbol">●</div>
+        <strong>Professioneller Auftritt</strong>
+        <span>Verlässliche Organisation mit Fokus auf Qualität und Stabilität.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="reveal">
+  <div class="container">
+    <div class="section-head">
+      <h2>Kontakt aufnehmen</h2>
+      <p>
+        Sie möchten mit uns zusammenarbeiten oder mehr erfahren?
+        Schreiben Sie uns direkt.
+      </p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Delivora</h3>
+        <div class="contact-line">
+          Asbeckstraße 14<br>
+          21073 Hamburg<br>
+          Deutschland
+        </div>
+
+        <div class="contact-line">
+          <strong>E-Mail:</strong><br>
+          info@deli-vora.com
+        </div>
+
+        <div class="contact-line">
+          <strong>Telefon:</strong><br>
+          +49 176 84338901
+        </div>
+      </div>
+
+      <form class="form" action="https://formsubmit.co/info@deli-vora.com" method="POST">
+        <h3>Nachricht senden</h3>
+
+        <input type="hidden" name="_subject" value="Neue Anfrage über Delivora Website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="text" name="Name" placeholder="Name" required>
+        <input type="email" name="E-Mail" placeholder="E-Mail" required>
+        <textarea name="Nachricht" placeholder="Ihre Nachricht" required></textarea>
+
+        <button type="submit">Senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Delivora</h4>
+        <p>Moderne Delivery- und Flottenlösungen für Unternehmen in Deutschland.</p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <div>
+        <h4>Kontakt</h4>
+        <p>info@deli-vora.com</p>
+        <p>+49 176 84338901</p>
+      </div>
+
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="#kontakt">Impressum</a>
+        <a href="#kontakt">Datenschutz</a>
+      </div>
+    </div>
+
+    <div class="copy">© 2026 Delivora. Alle Rechte vorbehalten.</div>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.15});
+
+reveals.forEach(section => observer.observe(section));
+
+const services = document.querySelectorAll('.service');
+
+services.forEach(card => {
+  card.addEventListener('click', () => {
+    const isActive = card.classList.contains('active');
+    services.forEach(item => item.classList.remove('active'));
+    if(!isActive){
+      card.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
