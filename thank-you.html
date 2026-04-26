@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vielen Dank | Delivora</title>
+
+  <style>
+    :root{
+      --bg:#f7faf8;
+      --ink:#10201c;
+      --muted:#6d7b76;
+      --green:#073b34;
+      --mint:#28d6a4;
+      --shadow:0 30px 90px rgba(7,59,52,.16);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family:Inter, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(40,214,164,.20), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(255,247,232,.90), transparent 32%),
+        linear-gradient(135deg, #f7faf8 0%, #eef7f3 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      color:var(--ink);
+      overflow:hidden;
+    }
+
+    .blob{
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:50%;
+      background:rgba(7,59,52,.06);
+      filter:blur(6px);
+      animation:float 7s ease-in-out infinite;
+    }
+
+    .blob.one{top:-170px;left:-160px}
+    .blob.two{right:-180px;bottom:-180px;animation-delay:1.2s}
+
+    .card{
+      position:relative;
+      width:100%;
+      max-width:680px;
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:32px;
+      padding:56px 34px 42px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      animation:cardIn .75s ease both;
+    }
+
+    .check-wrap{
+      width:132px;
+      height:132px;
+      border-radius:50%;
+      margin:0 auto 28px;
+      background:rgba(40,214,164,.14);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      animation:pulse 2.2s ease-in-out infinite;
+    }
+
+    .check-wrap::before,
+    .check-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      border:1px solid rgba(40,214,164,.35);
+      animation:ring 2.2s ease-out infinite;
+    }
+
+    .check-wrap::after{
+      animation-delay:.7s;
+    }
+
+    .check{
+      width:78px;
+      height:78px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--mint), #12a985);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 16px 34px rgba(40,214,164,.38);
+      animation:pop .6s ease .18s both;
+    }
+
+    .check svg{
+      width:42px;
+      height:42px;
+    }
+
+    .check path{
+      stroke:white;
+      stroke-width:5;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      stroke-dasharray:50;
+      stroke-dashoffset:50;
+      animation:draw .85s ease forwards .35s;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(38px, 7vw, 58px);
+      line-height:1.05;
+      letter-spacing:-1.6px;
+      color:var(--ink);
+    }
+
+    .subtitle{
+      margin:22px auto 0;
+      max-width:560px;
+      color:var(--muted);
+      font-size:clamp(18px, 3vw, 22px);
+      font-weight:650;
+      line-height:1.65;
+    }
+
+    .actions{
+      margin-top:38px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 30px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:18px;
+      background:var(--green);
+      color:white;
+      box-shadow:0 16px 32px rgba(7,59,52,.22);
+      transition:.25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 38px rgba(7,59,52,.28);
+    }
+
+    .btn:active{
+      transform:scale(.97);
+    }
+
+    .small{
+      margin-top:34px;
+      color:#8a9893;
+      font-size:16px;
+      font-weight:650;
+      line-height:1.5;
+    }
+
+    @keyframes cardIn{
+      from{opacity:0;transform:translateY(24px) scale(.98)}
+      to{opacity:1;transform:translateY(0) scale(1)}
+    }
+
+    @keyframes pop{
+      from{opacity:0;transform:scale(.72) rotate(-8deg)}
+      to{opacity:1;transform:scale(1) rotate(0)}
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.04)}
+    }
+
+    @keyframes ring{
+      0%{transform:scale(.88);opacity:.8}
+      100%{transform:scale(1.35);opacity:0}
+    }
+
+    @keyframes draw{
+      to{stroke-dashoffset:0}
+    }
+
+    @keyframes float{
+      0%,100%{transform:translate(0,0)}
+      50%{transform:translate(24px,18px)}
+    }
+
+    @media(max-width:520px){
+      body{
+        padding:16px;
+      }
+
+      .card{
+        padding:48px 22px 34px;
+        border-radius:28px;
+      }
+
+      .check-wrap{
+        width:118px;
+        height:118px;
+      }
+
+      .check{
+        width:72px;
+        height:72px;
+      }
+
+      .check svg{
+        width:38px;
+        height:38px;
+      }
+
+      .btn{
+        width:100%;
+        font-size:17px;
+      }
+
+      .small{
+        font-size:15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+
+  <main class="card">
+    <div class="check-wrap">
+      <div class="check">
+        <svg viewBox="0 0 52 52">
+          <path d="M14 27 L22 35 L38 18" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <h1>Vielen Dank!</h1>
+
+    <p class="subtitle">
+      Ihre Anfrage wurde erfolgreich übermittelt.<br>
+      Wir melden uns schnellstmöglich bei Ihnen.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="/">Zurück zur Startseite</a>
+    </div>
+
+    <div class="small">
+      Delivora - Flottenmanagement &amp; Lieferlösungen
+    </div>
+  </main>
+</body>
+</html>
